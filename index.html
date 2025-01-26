@@ -66,11 +66,14 @@
         }
 
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 40px;
-        }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 40px;
+    transition: all 0.3s ease;
+}
 
         .hero-text {
             max-width: 500px;
@@ -96,50 +99,77 @@
 
         .hero-image {
     display: grid;
-    grid-template-columns: auto 150px; /* Правая колонка для квадратов */
-    grid-template-rows: repeat(2, 150px); /* Два ряда для квадратов */
+    grid-template-columns: minmax(200px, 1fr) 150px;
+    grid-template-rows: repeat(2, minmax(100px, 150px));
     gap: 10px;
-    margin-left: 20px; /* Отступ от текста */
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.3s ease;
 }
 
-/* Первое изображение занимает всю левую колонку */
 .hero-image img:first-child {
-    grid-column: 1;
     grid-row: 1 / span 2;
-    width: 320px;
-    height: 310px; /* Высота = 2 квадрата + gap */
+    width: 100%;
+    height: calc(100% + 10px); /* Компенсируем gap */
+    min-height: 250px;
     object-fit: cover;
     border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-/* Квадратные изображения */
 .hero-image img:nth-child(2),
 .hero-image img:nth-child(3) {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
+    min-width: 120px;
     object-fit: cover;
     border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 992px) {
+    .hero-image {
+        grid-template-columns: minmax(180px, 1fr) 130px;
+        grid-template-rows: repeat(2, minmax(90px, 130px));
+    }
 }
 
 @media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
     .hero-image {
         grid-template-columns: 1fr;
-        margin-left: 0;
+        max-width: 600px;
+        order: 2;
     }
     
     .hero-image img:first-child {
-        width: 100%;
-        height: 250px;
-        grid-row: 1;
+        grid-row: auto;
+        height: 300px;
     }
     
     .hero-image img:nth-child(2),
     .hero-image img:nth-child(3) {
-        width: 48%;
-        height: 120px;
-        display: inline-block; /* Для мобилок можно расположить в ряд */
+        height: 200px;
+        width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    .hero-image img:first-child {
+        height: 250px;
+    }
+    
+    .hero-image img:nth-child(2),
+    .hero-image img:nth-child(3) {
+        height: 150px;
+    }
+}
+
 
         .search-bar {
             display: flex;
@@ -514,7 +544,6 @@
             <a href="#home">Home</a>
             <a href="#place">Place</a>
             <a href="#news">News</a>
-            <a href="#testimonials">Testimonials</a>
         </nav>
         <button class="login-btn">Login</button>
     </header>
@@ -789,7 +818,7 @@
                
                 <div style="text-align: right;">
                     <div class="logo" style="justify-content: flex-end;">
-                        <img src="assets/images/logo.png" alt="Company Logo" style="height: 40px;">
+                        <img src="assets/images/logo.png" alt="Company Logo" style="height: 40px;"> 
                         <h1 style="font-size: 24px; margin: 0;">Dolano</h1>
                     </div>
                 </div>
