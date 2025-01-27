@@ -139,26 +139,34 @@
     .hero {
         flex-direction: column;
         gap: 30px;
+        padding: 20px; /* Уменьшаем отступы */
     }
     
     .hero-image {
-        grid-template-columns: 1fr;
-        max-width: 600px;
+        grid-template-columns: 1fr; /* Только одна колонка */
+        grid-template-rows: auto; /* Автоматические ряды */
+        max-width: 100%;
         order: 2;
+        gap: 15px; /* Увеличиваем промежуток */
     }
     
     .hero-image img:first-child {
-        grid-row: auto;
+        grid-row: auto; /* Сбрасываем позиционирование */
         height: 300px;
+        width: 100%;
     }
     
     .hero-image img:nth-child(2),
     .hero-image img:nth-child(3) {
         height: 200px;
         width: 100%;
+        /* Добавляем явное позиционирование */
+        grid-column: 1;
+        grid-row: auto;
     }
 }
 
+/* Дополнительный контроль для очень маленьких экранов */
 @media (max-width: 480px) {
     .hero-image img:first-child {
         height: 250px;
@@ -167,6 +175,8 @@
     .hero-image img:nth-child(2),
     .hero-image img:nth-child(3) {
         height: 150px;
+        /* Гарантируем разделение */
+        margin: 5px 0;
     }
 }
 
@@ -520,14 +530,14 @@
     background-color: #003b4b;
 }
 .subscribe-section {
-  background-color: #26608f; /* Синий цвет */
-  color: white; /* Белый текст */
-  padding: 20px; /* Отступы внутри контейнера */
-  border-radius: 25px; /* Скругленные углы */
-  max-width: 600px; /* Ограничение ширины контейнера */
-  text-align: center; /* Выравнивание текста по центру */
-  margin: 20px auto; /* Центрирование на странице */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  background-color: #26608f; 
+  color: white; 
+  padding: 20px; 
+  border-radius: 25px;
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
