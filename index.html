@@ -24,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 20px 20px;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -77,6 +77,7 @@
 
         .hero-text {
             max-width: 500px;
+            margin-left: 12px;
         }
 
         .hero-text h1 {
@@ -110,7 +111,7 @@
 .hero-image img:first-child {
     grid-row: 1 / span 2;
     width: 100%;
-    height: calc(100% + 10px); /* Компенсируем gap */
+    height: calc(100% + 10px); 
     min-height: 250px;
     object-fit: cover;
     border-radius: 10px;
@@ -127,7 +128,6 @@
     transition: all 0.3s ease;
 }
 
-
 @media (max-width: 992px) {
     .hero-image {
         grid-template-columns: minmax(180px, 1fr) 130px;
@@ -135,38 +135,38 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 910px) { 
     .hero {
         flex-direction: column;
         gap: 30px;
-        padding: 20px; /* Уменьшаем отступы */
+        padding: 20px;
     }
     
     .hero-image {
-        grid-template-columns: 1fr; /* Только одна колонка */
-        grid-template-rows: auto; /* Автоматические ряды */
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
         max-width: 100%;
         order: 2;
-        gap: 15px; /* Увеличиваем промежуток */
+        gap: 15px;
     }
     
     .hero-image img:first-child {
-        grid-row: auto; /* Сбрасываем позиционирование */
+        grid-row: auto;
         height: 300px;
         width: 100%;
+        min-height: auto; 
     }
     
     .hero-image img:nth-child(2),
     .hero-image img:nth-child(3) {
         height: 200px;
         width: 100%;
-        /* Добавляем явное позиционирование */
         grid-column: 1;
         grid-row: auto;
+        min-width: 0; 
     }
 }
 
-/* Дополнительный контроль для очень маленьких экранов */
 @media (max-width: 480px) {
     .hero-image img:first-child {
         height: 250px;
@@ -175,43 +175,50 @@
     .hero-image img:nth-child(2),
     .hero-image img:nth-child(3) {
         height: 150px;
-        /* Гарантируем разделение */
         margin: 5px 0;
     }
 }
 
 
-        .search-bar {
-            display: flex;
-            gap: 15px;
-            background-color: #fff;
-            border-radius: 30px;
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            align-items: center;
-        }
+.search-bar {
+    display: flex;
+    gap: 15px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
 
-        .search-bar select,
-        .search-bar input {
-            border: none;
-            background: none;
-            outline: none;
-            font-size: 16px;
-            flex: 1;
-        }
+.search-bar select,
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+}
 
-        .search-bar button {
-            background-color: #004e64;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
+.search-button {
+    background-color: #4dabf7; 
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-button:hover {
+    background-color: #339af0; 
+}
 
         .main-section {
             padding: 40px;
@@ -243,7 +250,7 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 250px; /* Фиксированная высота */
+    height: 250px;
 }
 
 .place-card img {
@@ -304,7 +311,7 @@
             font-size: 16px;
             font-weight: bold;
             color: #ffa726;
-            /* Оранжевый цвет для цены */
+           
         }
 
         .place-card-content .stars {
@@ -390,23 +397,44 @@
         }
 
         .testimonials-section {
-            background-color: #ffe8d5;
-            padding: 40px;
-        }
+    background-color: #ffe8d5;
+    padding: 40px;
+   
+    box-sizing: border-box;
+}
 
-        .testimonial-cards {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
+.testimonial-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
 
-        .testimonial-card {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
+.testimonial-card {
+    flex: 1 1 300px; 
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    min-width: 280px; 
+    max-width: 400px; 
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 40px 20px; 
+    }
+    
+    .testimonial-card {
+        flex: 1 1 100%; 
+        max-width: 100%;
+    }
+}
 
         .testimonial-card .author {
             display: flex;
@@ -558,9 +586,9 @@
         <button class="login-btn">Login</button>
     </header>
 
-    <section  class="hero">
+    <section class="hero">
         <div class="hero-text">
-            <h1>Your dream <span>holiday 🏖️</span> is waiting</h1>
+            <h1>Your dream <span>holiday </span> 🏖️ is waiting</h1>
             <p>Find your favorite vacation for your story around the globe and make your trip meaningful.</p>
             <div class="search-bar">
                 <select>
@@ -579,8 +607,8 @@
                     <option>$800 - $1200</option>
                     <option>$1200 - $2000</option>
                 </select>
-                <button> &#128269; </button>
             </div>
+            <button class="search-button">Search</button>
         </div>
         <div class="hero-image">
             <img src="assets/images/image1.png" alt="Unicorn">
@@ -771,7 +799,7 @@
     <footer style="background: #fff; padding: 40px 20px; border-top: 1px solid #eee;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding-bottom: 40px; border-bottom: 1px solid #ddd;">
-                <!-- Колонки с контентом (оставлены без изменений) -->
+                
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Destination</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
@@ -820,7 +848,7 @@
                 </div>
             </div>
     
-            <!-- Блок с логотипом и копирайтом -->
+        
             <div style="text-align: center; padding: 30px 0 20px;">
                 <div style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: 15px;">
                     <img src="assets/images/logo.png" alt="Company Logo" style="height: 40px;">
@@ -831,7 +859,7 @@
                 </div>
             </div>
     
-            <!-- Ссылки в самом низу -->
+          
             <div style="display: flex; justify-content: center; gap: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Privacy Policy</a>
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Terms of Service</a>
