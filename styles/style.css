@@ -120,7 +120,7 @@ header {
 .hero-image img:first-child {
     grid-row: 1 / span 2;
     width: 100%;
-    height: calc(100% + 10px);
+    height: calc(100%);
     min-height: 250px;
     object-fit: cover;
     border-radius: 10px;
