@@ -794,3 +794,87 @@ footer a:hover {
         padding-right: 5%;
     }
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-section {
+    padding: 40px 0;
+}
+
+.contact-form, .contact-info {
+    width: 48%;
+}
+
+.contact-form h2, .contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-form p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-form button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .contact-form, .contact-info {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; 
+}
