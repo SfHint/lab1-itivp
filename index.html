@@ -13,17 +13,45 @@
 
 <body>
     <header>
-        <div id="home" class="logo">
-            <img src="assets/images/logo.png" alt="Company Logo">
-            <h1>Dolano</h1>
+        <!-- Контейнер для логотипа и бургер-меню -->
+        <div class="header-left">
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <div id="home" class="logo">
+                <img src="assets/images/logo.png" alt="Company Logo">
+                <h1>Dolano</h1>
+            </div>
         </div>
+    
         <nav class="nav">
             <a href="#home">Главная</a>
             <a href="#place">Места</a>
             <a href="#news">Новости</a>
             <a href="about.html">О нас</a>
         </nav>
+    
         <button class="login-btn">Войти</button>
+    
+        <!-- Мобильное меню -->
+        <nav class="mobile-nav">
+            <a href="#home">Главная</a>
+            <a href="#place">Места</a>
+            <a href="#news">Новости</a>
+            <a href="about.html">О нас</a>
+        </nav>
+    </header>
+    
+    <script>
+        function toggleMenu() {
+            document.querySelector(".mobile-nav").classList.toggle("active");
+        }
+    </script>
+    
+ 
+     <script>
+         function toggleMenu() {
+             document.querySelector(".mobile-nav").classList.toggle("active");
+         }
+     </script>
     </header>
 
     <section class="hero">
@@ -227,7 +255,7 @@
             <h2>Следите за последними обновлениями</h2>
             <p>Подпишитесь на нашу рассылку и будьте в курсе событий.</p>
             <form>
-                <input type="email" placeholder="Enter your email" required>
+                <input type="email" placeholder="Введите вашу почту" required>
                 <button type="submit">Подписаться</button>
             </form>
         </div>
