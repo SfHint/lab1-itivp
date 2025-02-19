@@ -68,7 +68,7 @@ header {
     display: none;
     font-size: 28px;
     cursor: pointer;
-    position: absolute;
+    
     top: 20px;
    /* Сдвиг правее */
     z-index: 1100;
