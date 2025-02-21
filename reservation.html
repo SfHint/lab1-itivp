@@ -42,7 +42,65 @@
         </nav>
     </header>
 
+    <main><!--
+        <section class="reservation-hero">
+            <img src="assets/images/tour-hero.jpg" alt="Пейзаж с горами и морем">
+            <div class="reservation-hero-text">
+                <h2>Бронирование туров</h2>
+                <p>Найдите идеальный тур для вашего путешествия</p>
+                <a href="#tourReservation" class="start-btn">Начать</a>
+            </div>
+        </section>-->
 
+        <section class="tour-reservation-form"  id="tourReservation">
+            <h2>Забронируйте ваш тур прямо сейчас!</h2>
+            <form id="tourReservationForm">
+                <div class="form-field">
+                    <label for="destination">Направление:</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Выберите направление</option>
+                        <option value="maldives">Мальдивы</option>
+                        <option value="thailand">Таиланд</option>
+                        <option value="switzerland">Швейцария</option>
+                        <option value="italy">Италия</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="date">Дата поездки:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="adults">Количество взрослых:</label>
+                    <input type="number" id="adults" name="adults" min="1" max="10" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="children">Количество детей:</label>
+                    <input type="number" id="children" name="children" min="0" max="5">
+                </div>
+
+                <div class="form-field">
+                    <label for="accommodation">Тип проживания:</label>
+                    <select id="accommodation" name="accommodation" required>
+                        <option value="">Выберите тип проживания</option>
+                        <option value="hotel">Отель</option>
+                        <option value="apartment">Апартаменты</option>
+                        <option value="villa">Вилла</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="special-requests">Особые пожелания:</label>
+                    <textarea id="special-requests" name="special-requests"></textarea>
+                </div>
+
+                <button type="submit" class="reserve-btn">Забронировать</button>
+                <p><a href="terms.html">Условия бронирования</a></p>
+            </form>
+        </section>
+    </main>
 
 
 

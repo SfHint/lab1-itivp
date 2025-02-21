@@ -22,10 +22,12 @@ header {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .header-left {
     display: flex;
     align-items: center;
-    gap: 15px; /* Расстояние между бургером и логотипом */
+    gap: 15px;
+    /* Расстояние между бургером и логотипом */
 }
 
 .logo {
@@ -64,13 +66,14 @@ header {
     font-weight: 600;
     margin-right: 30px;
 }
+
 .burger-menu {
     display: none;
     font-size: 28px;
     cursor: pointer;
-    
+
     top: 20px;
-   /* Сдвиг правее */
+    /* Сдвиг правее */
     z-index: 1100;
     background: #004e64;
     color: white;
@@ -118,7 +121,7 @@ header {
 
     .burger-menu {
         display: block;
-        
+
     }
 }
 
@@ -317,26 +320,27 @@ header {
 .search-button:hover {
     background-color: #339af0;
 }
+
 @media (max-width: 768px) {
     .search-bar {
-        flex-direction: column; 
+        flex-direction: column;
         gap: 10px;
-        padding: 10px; 
+        padding: 10px;
     }
 
     .search-bar select,
     .search-bar input {
-        width: 100%; 
-        font-size: 14px; 
+        width: 100%;
+        font-size: 14px;
     }
 
     .search-bar .category:not(:last-child)::after {
-        display: none; 
+        display: none;
     }
 
     .search-button {
-        width: 100%; 
-        margin-top: 10px; 
+        width: 100%;
+        margin-top: 10px;
     }
 }
 
@@ -395,7 +399,7 @@ header {
 .place-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;   
+    gap: 20px;
     max-width: 1000px;
     margin: 20px auto;
 }
@@ -471,36 +475,38 @@ header {
     margin-top: 20px;
 }
 
-.page-number, .dots {
+.page-number,
+.dots {
     display: inline-flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
-    width: 36px; 
-    height: 36px; 
+    width: 36px;
+    height: 36px;
     margin: 0 5px;
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
     background-color: #f9f9f9;
-    color: #333; 
-    font-size: 14px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.page-number.active, .page-number:hover {
-    background-color: #007bff; 
+.page-number.active,
+.page-number:hover {
+    background-color: #007bff;
     color: white;
-    border-color: #007bff; 
+    border-color: #007bff;
 }
 
 .dots {
     width: auto;
     height: auto;
     padding: 8px 12px;
-    border: none; 
-    background-color: transparent; 
+    border: none;
+    background-color: transparent;
     cursor: default;
-    color: #aaa; 
+    color: #aaa;
 }
 
 .news-section,
@@ -677,12 +683,13 @@ footer a:hover {
 .subscribe-section h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #aaa
 }
 
 .subscribe-section p {
     font-size: 16px;
     margin-bottom: 20px;
-    color: #555;
+    color: #aaa;
 }
 
 .subscribe-section form {
@@ -696,7 +703,7 @@ footer a:hover {
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 250px;
+
     font-size: 14px;
     outline: none;
 }
@@ -894,11 +901,13 @@ footer a:hover {
     padding: 40px 0;
 }
 
-.contact-form, .contact-info {
+.contact-form,
+.contact-info {
     width: 48%;
 }
 
-.contact-form h2, .contact-info h2 {
+.contact-form h2,
+.contact-info h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -908,7 +917,8 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -948,7 +958,8 @@ footer a:hover {
         flex-direction: column;
     }
 
-    .contact-form, .contact-info {
+    .contact-form,
+    .contact-info {
         width: 100%;
         margin-bottom: 40px;
     }
@@ -963,7 +974,7 @@ footer a:hover {
 .checkbox-container label {
     display: inline-flex;
     align-items: center;
-    gap: 5px; 
+    gap: 5px;
 }
 
 .aboba {
@@ -1000,11 +1011,13 @@ footer a:hover {
 .faq-item {
     margin-bottom: 20px;
 }
+
 .faq-question {
     cursor: pointer;
     padding-left: 20px;
     position: relative;
 }
+
 .faq-question::before {
     content: "▶";
     position: absolute;
@@ -1012,16 +1025,20 @@ footer a:hover {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .faq-answer {
     display: none;
     margin-left: 20px;
 }
-.faq-toggle:checked + .faq-question + .faq-answer {
+
+.faq-toggle:checked+.faq-question+.faq-answer {
     display: block;
 }
-.faq-toggle:checked + .faq-question::before {
+
+.faq-toggle:checked+.faq-question::before {
     content: "▼";
 }
+
 .faq-answer {
     display: none;
     padding: 15px 20px;
@@ -1030,6 +1047,119 @@ footer a:hover {
     line-height: 1.6;
 }
 
-.faq-toggle:checked + .faq-answer {
+
+
+.faq-toggle:checked+.faq-answer {
     display: block;
+}
+
+main {
+    padding: 40px;
+}
+
+.reservation-hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.reservation-hero img {
+    width: 100%;
+    height: auto;
+}
+
+.reservation-hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Стили для формы бронирования */
+.tour-reservation-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tour-reservation-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    max-width: 100%; /* Установка максимальной ширины */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
+}
+
+.reserve-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.reserve-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .tour-reservation-form {
+        padding: 15px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        font-size: 14px;
+    }
+
+    .reserve-btn {
+        font-size: 14px;
+    }
+}
+
+.start-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #0056b3;
 }

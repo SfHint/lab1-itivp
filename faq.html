@@ -13,7 +13,7 @@
 
 <body>
     <header>
-       
+
         <div class="header-left">
             <div class="burger-menu" onclick="toggleMenu()">☰</div>
             <div id="home" class="logo">
@@ -21,7 +21,7 @@
                 <h1>Dolano</h1>
             </div>
         </div>
-    
+
         <nav class="nav">
             <a href="index.html">Главная</a>
             <a href="faq.html">FAQ</a>
@@ -29,10 +29,10 @@
             <a href="about.html">О нас</a>
             <a href="reservation.html">Бронирование</a>
         </nav>
-    
+
         <button class="login-btn">Войти</button>
-    
-       
+
+
         <nav class="mobile-nav">
             <a href="index.html">Главная</a>
             <a href="faq.html">FAQ</a>
@@ -41,91 +41,124 @@
             <a href="reservation.html">Бронирование</a>
         </nav>
     </header>
-    
+
     <script>
         function toggleMenu() {
             document.querySelector(".mobile-nav").classList.toggle("active");
         }
     </script>
-    
- 
-     <script>
-         function toggleMenu() {
-             document.querySelector(".mobile-nav").classList.toggle("active");
-         }
-     </script>
+
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".mobile-nav").classList.toggle("active");
+        }
+    </script>
     </header>
-    
+
     <h2>Ответы на часто задаваемые вопросы</h2>
     <p>Ниже представлены ответы на наиболее часто задаваемые вопросы...</p>
     <section class="faq-section">
         <div class="container">
-    <div class="faq-items">
-    <div class="faq-item">
-        <input type="checkbox" id="faq1" class="faq-toggle" style="display:none;">
-        <label for="faq1" class="faq-question">Что такое горящий тур?</label>
-        <div class="faq-answer">
-            «Горящие» туры (путевки) — это туры, которые появляются за 1-5 дней до начала тура. Некоторые считают, что «горящие» туры есть всегда, и для того, чтобы купить путёвку дешево, нужно просто придти в агентство за несколько дней до вылета, и купить путевку. К сожалению, это не всегда и не совсем так.
-            Особенность «горящих» туров заключается в том, что к моменту появления спецпредложений не во всех отелях остаются места. Поэтому, если Вы настроены отдохнуть в конкретном отеле, лучше позаботиться о приобретении тура заранее. Как правило, лучшие отели в сочетании «цена-качество» раскупаются в первую очередь. Кроме того, по-настоящему «горящие туры» раскупаются очень быстро, поэтому, если тур действительно «горящий», важно успеть его забронировать.
+            <div class="faq-items">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1" class="faq-toggle" style="display:none;">
+                    <label for="faq1" class="faq-question">Что такое горящий тур?</label>
+                    <div class="faq-answer">
+                        «Горящие» туры (путевки) — это туры, которые появляются за 1-5 дней до начала тура. Некоторые
+                        считают, что «горящие» туры есть всегда, и для того, чтобы купить путёвку дешево, нужно просто
+                        придти в агентство за несколько дней до вылета, и купить путевку. К сожалению, это не всегда и
+                        не совсем так.
+                        Особенность «горящих» туров заключается в том, что к моменту появления спецпредложений не во
+                        всех отелях остаются места. Поэтому, если Вы настроены отдохнуть в конкретном отеле, лучше
+                        позаботиться о приобретении тура заранее. Как правило, лучшие отели в сочетании «цена-качество»
+                        раскупаются в первую очередь. Кроме того, по-настоящему «горящие туры» раскупаются очень быстро,
+                        поэтому, если тур действительно «горящий», важно успеть его забронировать.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2" class="faq-toggle" style="display:none;">
+                    <label for="faq2" class="faq-question">За какое минимальное количество дней можно забронировать тур?
+                    </label>
+                    <div class="faq-answer">
+                        Минимальный срок бронирования тура составляет 2 дня, при условии вылета из Минска и около 3-4
+                        дней, при отправлении из другого города. Также не стоит забывать о визе, ведь посещение
+                        некоторых стран возможно лишь при наличие визы данного государства. Срок оформления визы может
+                        колебаться от пары дней до нескольких недель.
+                        Однако, если хорошо известны даты отпуска, то мы рекомендуем Вам бронировать туры заранее,
+                        примерно, за 3-4 месяца до вылета и на это есть несколько причин. Во-первых, туроператоры уже
+                        имеют договоренности с максимальным количеством отелей, следовательно, у Вас будет больший
+                        выбор, чем за 8-10 месяцев до вылета. Во-вторых, многие отели предлагают услугу раннего
+                        бронирования туров, что дает возможность Вам получить существенную скидку на проживание. И,
+                        в-третьих, большое количество свободных номеров, в то время как ближе к дате вылета номера в
+                        хороших отелях уже полностью раскуплены . </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3" class="faq-toggle" style="display:none;">
+                    <label for="faq3" class="faq-question">Как выглядит электронный билет на самолет и как им
+                        пользоваться?
+                    </label>
+                    <div class="faq-answer">
+                        Электронный билет (e-ticket) представляет собой обычный проездной документ, который является
+                        подтверждением выкупа места, с одной лишь разницей: его можно приобрести в интернете. Многие до
+                        сих пор с некоторым недоверием относятся к подобной покупке, однако онлайн-продажа билетов на
+                        самолет, автобус, поезд и другие транспортные средства уже прочно вошла в мировую практику. Не
+                        стоит переживать, например, что пассажиры с билетами, купленными в авиакассах, обслуживаются в
+                        первую очередь или имеют другие привилегии. Для авиакомпании совершенно неважно, каким способом
+                        вы приобрели проездной документ. Из данной статьи вы узнаете, как выглядит электронный билет на
+                        самолет, какие преимущества имеет интернет-покупка и т. д. </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4" class="faq-toggle" style="display:none;">
+                    <label for="faq4" class="faq-question">Как оплатить тур онлайн?</label>
+                    <div class="faq-answer">
+                        Оплата тура онлайн осуществляется через безопасные платёжные системы. Мы принимаем карты Visa,
+                        Mastercard, а также электронные кошельки. Процесс оплаты прост: выберите тур, перейдите к
+                        оформлению, укажите данные карты и подтвердите платеж.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq5" class="faq-toggle" style="display:none;">
+                    <label for="faq5" class="faq-question">Можно ли изменить дату вылета после покупки тура?</label>
+                    <div class="faq-answer">
+                        Изменение даты вылета зависит от условий тарифа и авиакомпании. Обычно за изменение взимается
+                        плата, которая может варьироваться в зависимости от времени до вылета. Рекомендуем обратиться к
+                        нашему менеджеру для уточнения деталей.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq6" class="faq-toggle" style="display:none;">
+                    <label for="faq6" class="faq-question">Что делать, если потерял паспорт за границей?</label>
+                    <div class="faq-answer">
+                        Если вы потеряли паспорт за границей, немедленно обратитесь в местную полицию и в консульство
+                        своей страны. Консул поможет вам получить временное удостоверение личности для возвращения
+                        домой.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq7" class="faq-toggle" style="display:none;">
+                    <label for="faq7" class="faq-question">Как выбрать отель для отдыха?</label>
+                    <div class="faq-answer">
+                        При выборе отеля важно учитывать местоположение, рейтинг, отзывы других туристов, наличие
+                        необходимых услуг (например, питание, трансфер, Wi-Fi). Также рекомендуется сравнить цены разных
+                        площадок бронирования.
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="faq-item">
-        <input type="checkbox" id="faq2" class="faq-toggle" style="display:none;">
-        <label for="faq2" class="faq-question">За какое минимальное количество дней можно забронировать тур?
-        </label>
-        <div class="faq-answer">
-            Минимальный срок бронирования тура составляет 2 дня, при условии вылета из Минска и около 3-4 дней, при отправлении из другого города. Также не стоит забывать о визе, ведь посещение некоторых стран возможно лишь при наличие визы данного государства. Срок оформления визы может колебаться от пары дней до нескольких недель.
-            Однако, если хорошо известны даты отпуска, то мы рекомендуем Вам бронировать туры заранее, примерно, за 3-4 месяца до вылета и на это есть несколько причин. Во-первых, туроператоры уже имеют договоренности с максимальным количеством отелей, следовательно, у Вас будет больший выбор, чем за 8-10 месяцев до вылета. Во-вторых, многие отели предлагают услугу раннего бронирования туров, что дает возможность Вам получить существенную скидку на проживание. И, в-третьих, большое количество свободных номеров, в то время как ближе к дате вылета номера в хороших отелях уже полностью раскуплены .        </div>
-    </div>
-
-    <div class="faq-item">
-        <input type="checkbox" id="faq3" class="faq-toggle" style="display:none;">
-        <label for="faq3" class="faq-question">Как выглядит электронный билет на самолет и как им пользоваться?
-           </label>
-        <div class="faq-answer">
-            Электронный билет (e-ticket) представляет собой обычный проездной документ, который является подтверждением выкупа места, с одной лишь разницей: его можно приобрести в интернете. Многие до сих пор с некоторым недоверием относятся к подобной покупке, однако онлайн-продажа билетов на самолет, автобус, поезд и другие транспортные средства уже прочно вошла в мировую практику. Не стоит переживать, например, что пассажиры с билетами, купленными в авиакассах, обслуживаются в первую очередь или имеют другие привилегии. Для авиакомпании совершенно неважно, каким способом вы приобрели проездной документ. Из данной статьи вы узнаете, как выглядит электронный билет на самолет, какие преимущества имеет интернет-покупка и т. д.        </div>
-    </div>
-
-    <div class="faq-item">
-        <input type="checkbox" id="faq4" class="faq-toggle" style="display:none;">
-        <label for="faq4" class="faq-question">Как оплатить тур онлайн?</label>
-        <div class="faq-answer">
-            Оплата тура онлайн осуществляется через безопасные платёжные системы. Мы принимаем карты Visa, Mastercard, а также электронные кошельки. Процесс оплаты прост: выберите тур, перейдите к оформлению, укажите данные карты и подтвердите платеж.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <input type="checkbox" id="faq5" class="faq-toggle" style="display:none;">
-        <label for="faq5" class="faq-question">Можно ли изменить дату вылета после покупки тура?</label>
-        <div class="faq-answer">
-            Изменение даты вылета зависит от условий тарифа и авиакомпании. Обычно за изменение взимается плата, которая может варьироваться в зависимости от времени до вылета. Рекомендуем обратиться к нашему менеджеру для уточнения деталей.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <input type="checkbox" id="faq6" class="faq-toggle" style="display:none;">
-        <label for="faq6" class="faq-question">Что делать, если потерял паспорт за границей?</label>
-        <div class="faq-answer">
-            Если вы потеряли паспорт за границей, немедленно обратитесь в местную полицию и в консульство своей страны. Консул поможет вам получить временное удостоверение личности для возвращения домой.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <input type="checkbox" id="faq7" class="faq-toggle" style="display:none;">
-        <label for="faq7" class="faq-question">Как выбрать отель для отдыха?</label>
-        <div class="faq-answer">
-            При выборе отеля важно учитывать местоположение, рейтинг, отзывы других туристов, наличие необходимых услуг (например, питание, трансфер, Wi-Fi). Также рекомендуется сравнить цены разных площадок бронирования.
-        </div>
-    </div>
-</div>
-</div>
-</section>
-
-    <footer style="background: #fff; padding: 40px 20px; border-top: 1px solid #eee;"> 
+    <footer style="background: #fff; padding: 40px 20px; border-top: 1px solid #eee;">
         <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: grid;   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 30px; padding-bottom: 40px; border-bottom: 1px solid #ddd;">
-                
+            <div
+                style="display: grid;   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 30px; padding-bottom: 40px; border-bottom: 1px solid #ddd;">
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Места назначения</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
@@ -136,7 +169,7 @@
                         <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Швеция</a></li>
                     </ul>
                 </div>
-    
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Компания</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
@@ -147,17 +180,20 @@
                         <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Статус</a></li>
                     </ul>
                 </div>
-    
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Политика</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика приватности</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Условия использования</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика Cookie</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика
+                                приватности</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Условия
+                                использования</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика Cookie</a>
+                        </li>
 
                     </ul>
                 </div>
-    
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Следите за нами</h4>
                     <div style="display: flex; gap: 15px;">
@@ -173,8 +209,8 @@
                     </div>
                 </div>
             </div>
-    
-        
+
+
             <div style="text-align: center; padding: 30px 0 20px;">
                 <div style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: 15px;">
                     <img src="assets/images/logo.png" alt="Company Logo" style="height: 40px;">
@@ -184,9 +220,10 @@
                     © 2024 Dolano Inc. Все права защищены.
                 </div>
             </div>
-    
-          
-            <div style="display: flex; justify-content: center; gap: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+
+
+            <div
+                style="display: flex; justify-content: center; gap: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика приватности</a>
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Условия использования</a>
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика Cookie</a>
@@ -194,4 +231,5 @@
         </div>
     </footer>
 </body>
+
 </html>
