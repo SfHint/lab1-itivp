@@ -965,3 +965,29 @@ footer a:hover {
     align-items: center;
     gap: 5px; 
 }
+
+.faq-item {
+    margin-bottom: 20px;
+}
+.faq-question {
+    cursor: pointer;
+    padding-left: 20px;
+    position: relative;
+}
+.faq-question::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.faq-answer {
+    display: none;
+    margin-left: 20px;
+}
+.faq-toggle:checked + .faq-question + .faq-answer {
+    display: block;
+}
+.faq-toggle:checked + .faq-question::before {
+    content: "▼";
+}
