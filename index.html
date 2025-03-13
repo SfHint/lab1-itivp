@@ -49,6 +49,7 @@
     </script>
 
 
+
     <script>
         function toggleMenu() {
             document.querySelector(".mobile-nav").classList.toggle("active");
@@ -80,11 +81,26 @@
             </div>
             <button class="search-button">Поиск</button>
         </div>
-        <div class="hero-image">
-            <img src="assets/images/image1.png" alt="Unicorn">
-            <img src="assets/images/image2.png" alt="Bali">
-            <img src="assets/images/image3.png" alt="boat">
-        </div>
+        <div class="hero-slider">
+  <div class="slides">
+    <div class="slide active">
+      <img src="assets/images/image1.jpg" alt="Unicorn">
+    </div>
+    <div class="slide">
+      <img src="assets/images/image2.jpg" alt="Bali">
+    </div>
+    <div class="slide">
+      <img src="assets/images/image3.png" alt="boat">
+    </div>
+  </div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+  <div class="indicators">
+    <span class="indicator active"></span>
+    <span class="indicator"></span>
+    <span class="indicator"></span>
+  </div>
+</div>
     </section>
 
     <section class="main-section">
@@ -357,6 +373,48 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            indicators.forEach((ind, i) => ind.classList.toggle('active', i === index));
+            currentSlide = index;
+            resetAutoSlide();
+        }
+    
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+    
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+    
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+    
+        document.querySelector('.next').addEventListener('click', () => nextSlide());
+        document.querySelector('.prev').addEventListener('click', () => prevSlide());
+    
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+    
+        // Initialize
+        showSlide(currentSlide);
+        resetAutoSlide();
+    </script>
+
 </body>
 
 
