@@ -73,7 +73,7 @@ header {
     cursor: pointer;
 
     top: 20px;
-    /* Сдвиг правее */
+ 
     z-index: 1100;
     background: #004e64;
     color: white;
@@ -81,7 +81,7 @@ header {
     border-radius: 5px;
 }
 
-/* Мобильное меню (скрыто по умолчанию) */
+
 .mobile-nav {
     display: none;
     flex-direction: column;
