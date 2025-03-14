@@ -10,8 +10,37 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=35c4f95f-37d5-4f0f-9d33-8ba177f660b4&lang=ru_RU" type="text/javascript"></script>
 </head>
+<style>
+    /* Стили для всплывающего окна */
+    .custom-balloon {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      max-width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 16px; /* Увеличенный шрифт */
+    }
 
+    .custom-balloon h3 {
+      margin: 0 0 10px;
+      color: #212529;
+    }
+
+    .custom-balloon p {
+      margin: 0;
+      color: #495057;
+    }
+
+    /* Стили для метки при наведении */
+    .highlight-marker {
+      background-color: #007bff;
+      border-radius: 50%;
+    }
+  </style>
 <body>
     <header>
 
@@ -96,36 +125,97 @@
                 <p><i class="fa fa-globe" aria-hidden="true"></i> г. Минск, пр-т Дзержинского З, офис 12А, 5 этаж</p>
             </div>
         </div>
-        <div id="map" style="width: 100%; height: 400px;"></div>
+        <div id="map" style="width: 100%; height: 500px"></div>
 
-        <!-- Подключение API Яндекс.Карт -->
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_key&lang=ru_RU" type="text/javascript"></script>
-        <script type="text/javascript">
-            ymaps.ready(init);
+  <script>
+    ymaps.ready(() => {
+      const map = new ymaps.Map('map', {
+        center: [53.902284, 27.561831],
+        zoom: 13,
+      });
 
-            function init() {
-                var myMap = new ymaps.Map("map", {
-                    center: [53.911647, 27.595878], // Координаты 5 корпус БГУИР
-                    zoom: 19, // Увеличиваем масштаб для лучшей видимости
-                    controls: ['zoomControl', 'fullscreenControl']
-                }, {
-                    searchControlProvider: 'yandex#search'
-                });
+      const markers = [
+        {
+          coordinates: [53.861062, 27.479419],
+          info: {
+            title: "Офис в ТЦ Титан",
+            description: "Главный офис Dolano. Офис находится на 5 этаже ТЦ Титан."
+          }
+        },
+        {
+          coordinates: [52.416811, 30.961696],
+          info: {
+            title: "Филиал Dolano в Гомеле",
+            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+          }
+        },
+        {
+          coordinates: [55.194386, 30.192680],
+          info: {
+            title: "Филиал Dolano в Витебске",
+            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+          }
+        }
+        ,
+        {
+          coordinates: [52.097153, 23.685785],
+          info: {
+            title: "Филиал Dolano в Бресте",
+            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+          }
+        },
+        {
+          coordinates: [53.677442, 23.828648],
+          info: {
+            title: "Филиал Dolano в Гродно",
+            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+          }
+        },
+        {
+          coordinates: [53.897648, 27.560388],
+          info: {
+            title: "Офис обслуживания клиентов",
+            description: "Здесь вы можете забронировать тур, оплатить путешествие или получить поддержку по текущим заказам."
+          }
+        }
+      ];
 
-                // Добавляем метку на карту
-                var myPlacemark = new ymaps.Placemark([53.911647, 27.595878], {
-                    balloonContent: '5 корпус БГУИР', // Название места
-                    hintContent: '5 корпус БГУИР' // Подсказка при наведении
-                }, {
-                    iconLayout: 'default#image',
-                    iconImageHref: 'https://sandbox.yandex-team.ru/sandbox/api/static/pin.png', // Можно заменить на свой значок
-                    iconImageSize: [30, 42],
-                    iconImageOffset: [-15, -42]
-                });
+      markers.forEach(markerData => {
+        const placemark = new ymaps.Placemark(
+          markerData.coordinates,
+          { balloonContentBody: getBalloonContent(markerData.info) }, // Внутренний контент
+          {
+            iconLayout: 'default#image',
+            iconImageHref: 'https://cdn-icons-png.flaticon.com/128/3699/3699561.png', // Ваша иконка
+            iconImageSize: [32, 32],
+            iconImageOffset: [-16, -32],
+            balloonPanelMaxMapArea: 0 // Включаем всплывающее окно
+          }
+        );
 
-                myMap.geoObjects.add(myPlacemark);
-            }
-        </script>
+        placemark.events.add('mouseenter', () => {
+          placemark.balloon.open();
+        });
+
+        // Закрываем балун при уходе курсора
+        placemark.events.add('mouseleave', () => {
+          placemark.balloon.close();
+        });
+
+        map.geoObjects.add(placemark);
+      });
+
+      // Функция для генерации контента балуна
+      function getBalloonContent(info) {
+        return `
+          <div class="custom-balloon">
+            <h3>${info.title}</h3>
+            <p>${info.description}</p>
+          </div>
+        `;
+      }
+    });
+  </script>
     </section>
 
 
