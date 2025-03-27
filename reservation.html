@@ -85,7 +85,7 @@
 
                     function setMaxDate() {
                         // Устанавливаем максимальную дату как 31 декабря 2050 года
-                        const maxDate = new Date(2050, 11, 31); // Месяцы в JavaScript начинаются с 0 (11 = декабрь)
+                        const maxDate = new Date(2026, 11, 31); // Месяцы в JavaScript начинаются с 0 (11 = декабрь)
                         const year = maxDate.getFullYear();
                         const month = String(maxDate.getMonth() + 1).padStart(2, '0');
                         const day = String(maxDate.getDate()).padStart(2, '0');
@@ -138,7 +138,7 @@
 
                 <div class="form-field">
                     <label for="special-requests">Особые пожелания:</label>
-                    <textarea id="special-requests" name="special-requests"></textarea>
+                    <textarea id="special-requests" name="special-requests" maxlength="550"></textarea>
                 </div>
 
                 <button type="submit" class="reserve-btn">Забронировать</button>
