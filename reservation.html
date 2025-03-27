@@ -13,7 +13,7 @@
 
 <body>
     <header>
-       
+
         <div class="header-left">
             <div class="burger-menu" onclick="toggleMenu()">☰</div>
             <div id="home" class="logo">
@@ -21,7 +21,7 @@
                 <h1>Dolano</h1>
             </div>
         </div>
-    
+
         <nav class="nav">
             <a href="index.html">Главная</a>
             <a href="faq.html">FAQ</a>
@@ -29,10 +29,10 @@
             <a href="about.html">О нас</a>
             <a href="reservation.html">Бронирование</a>
         </nav>
-    
+
         <button class="login-btn">Войти</button>
-    
-       
+
+
         <nav class="mobile-nav">
             <a href="index.html">Главная</a>
             <a href="faq.html">FAQ</a>
@@ -52,7 +52,7 @@
             </div>
         </section>-->
 
-        <section class="tour-reservation-form"  id="tourReservation">
+        <section class="tour-reservation-form" id="tourReservation">
             <h2>Забронируйте ваш тур прямо сейчас!</h2>
             <form id="tourReservationForm">
                 <div class="form-field">
@@ -71,9 +71,10 @@
                     <input type="date" id="datePicker" name="date" required>
                 </div>
                 <script>
+                    
                     // Устанавливаем минимальную дату = сегодня
                     const datePicker = document.getElementById('datePicker');
-                    
+
                     function setMinDate() {
                         const today = new Date();
                         const year = today.getFullYear();
@@ -81,15 +82,30 @@
                         const day = String(today.getDate()).padStart(2, '0');
                         datePicker.min = `${year}-${month}-${day}`;
                     }
-            
+
+                    function setMaxDate() {
+                        // Устанавливаем максимальную дату как 31 декабря 2050 года
+                        const maxDate = new Date(2050, 11, 31); // Месяцы в JavaScript начинаются с 0 (11 = декабрь)
+                        const year = maxDate.getFullYear();
+                        const month = String(maxDate.getMonth() + 1).padStart(2, '0');
+                        const day = String(maxDate.getDate()).padStart(2, '0');
+                        datePicker.max = `${year}-${month}-${day}`;
+                    }
+
+
                     // Инициализация при загрузке
                     setMinDate();
-                    
+                    setMaxDate();
                     // Обновляем при попытке ввода
-                    datePicker.addEventListener('input', function() {
+                    datePicker.addEventListener('input', function () {
                         const selectedDate = new Date(this.value);
                         const minDate = new Date(this.min);
-                        
+                        const maxDate = new Date(this.max);
+
+                        // Если выбранная дата больше максимальной, сбрасываем её на максимальное значение
+                        if (selectedDate > maxDate) {
+                            this.value = this.max;
+                        }
                         if (selectedDate < minDate) {
                             this.value = this.min;
                         }
@@ -98,30 +114,16 @@
 
                 <div class="form-field">
                     <label for="adults">Количество взрослых:</label>
-                    <input type="number"
-                     id="adults"
-                        name="adults"
-                        maxlength="2"
-                        pattern="\d{1,2}"
-                        min="1"
-                        max="30"
+                    <input type="number" id="adults" name="adults" maxlength="2" pattern="\d{1,2}" min="1" max="30"
                         oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);
-                                    if(this.value > 30) this.value = 30;"
-                        required>
+                                    if(this.value > 30) this.value = 30;" required>
                 </div>
 
                 <div class="form-field">
                     <label for="children">Количество детей:</label>
-                    <input type="number"
-                    id="children" 
-                    name="children" 
-                    maxlength="2" 
-                    pattern="(0|[1-9]|1[0-9]|20)" 
-                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2); 
-                            if(this.value > 20) this.value = 20;"
-                    min="0" 
-                    max="20"
-                    required>
+                    <input type="number" id="children" name="children" maxlength="2" pattern="(0|[1-9]|1[0-9]|20)"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2); 
+                            if(this.value > 20) this.value = 20;" min="0" max="20" required>
                 </div>
 
                 <div class="form-field">
@@ -149,11 +151,12 @@
 
 
 
-    
-    <footer style="background: #fff; padding: 40px 20px; border-top: 1px solid #eee;"> 
+
+    <footer style="background: #fff; padding: 40px 20px; border-top: 1px solid #eee;">
         <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: grid;   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 30px; padding-bottom: 40px; border-bottom: 1px solid #ddd;">
-                
+            <div
+                style="display: grid;   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 30px; padding-bottom: 40px; border-bottom: 1px solid #ddd;">
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Места назначения</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
@@ -164,7 +167,7 @@
                         <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Швеция</a></li>
                     </ul>
                 </div>
-    
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Компания</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
@@ -175,17 +178,20 @@
                         <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Статус</a></li>
                     </ul>
                 </div>
-    
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Политика</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика приватности</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Условия использования</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика Cookie</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика
+                                приватности</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Условия
+                                использования</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика Cookie</a>
+                        </li>
 
                     </ul>
                 </div>
-    
+
                 <div>
                     <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Следите за нами</h4>
                     <div style="display: flex; gap: 15px;">
@@ -201,8 +207,8 @@
                     </div>
                 </div>
             </div>
-    
-        
+
+
             <div style="text-align: center; padding: 30px 0 20px;">
                 <div style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: 15px;">
                     <img src="assets/images/logo.png" alt="Company Logo" style="height: 40px;">
@@ -212,9 +218,10 @@
                     © 2024 Dolano Inc. Все права защищены.
                 </div>
             </div>
-    
-          
-            <div style="display: flex; justify-content: center; gap: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+
+
+            <div
+                style="display: flex; justify-content: center; gap: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика приватности</a>
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Условия использования</a>
                 <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика Cookie</a>

@@ -2,301 +2,304 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contant</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=35c4f95f-37d5-4f0f-9d33-8ba177f660b4&lang=ru_RU" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contant</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=35c4f95f-37d5-4f0f-9d33-8ba177f660b4&lang=ru_RU"
+    type="text/javascript"></script>
 </head>
 <style>
-    /* Стили для всплывающего окна */
-    .custom-balloon {
-      background-color: #f8f9fa;
-      border: 1px solid #dee2e6;
-      padding: 15px;
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
-      max-width: 250px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      font-size: 16px; /* Увеличенный шрифт */
-    }
+  /* Стили для всплывающего окна */
+  .custom-balloon {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    /* Увеличенный шрифт */
+  }
 
-    .custom-balloon h3 {
-      margin: 0 0 10px;
-      color: #212529;
-    }
+  .custom-balloon h3 {
+    margin: 0 0 10px;
+    color: #212529;
+  }
 
-    .custom-balloon p {
-      margin: 0;
-      color: #495057;
-    }
+  .custom-balloon p {
+    margin: 0;
+    color: #495057;
+  }
 
-    /* Стили для метки при наведении */
-    .highlight-marker {
-      background-color: #007bff;
-      border-radius: 50%;
-    }
-  </style>
+  /* Стили для метки при наведении */
+  .highlight-marker {
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+</style>
+
 <body>
-    <header>
+  <header>
 
-        <div class="header-left">
-            <div class="burger-menu" onclick="toggleMenu()">☰</div>
-            <div id="home" class="logo">
-                <img src="assets/images/logo.png" alt="Company Logo">
-                <h1>Dolano</h1>
-            </div>
-        </div>
+    <div class="header-left">
+      <div class="burger-menu" onclick="toggleMenu()">☰</div>
+      <div id="home" class="logo">
+        <img src="assets/images/logo.png" alt="Company Logo">
+        <h1>Dolano</h1>
+      </div>
+    </div>
 
-        <nav class="nav">
-            <a href="index.html">Главная</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Контакты</a>
-            <a href="about.html">О нас</a>
-            <a href="reservation.html">Бронирование</a>
-        </nav>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Контакты</a>
+      <a href="about.html">О нас</a>
+      <a href="reservation.html">Бронирование</a>
+    </nav>
 
-        <button class="login-btn">Войти</button>
-
-
-        <nav class="mobile-nav">
-            <a href="index.html">Главная</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Контакты</a>
-            <a href="about.html">О нас</a>
-            <a href="reservation.html">Бронирование</a>
-        </nav>
-    </header>
-
-    <script>
-        function toggleMenu() {
-            document.querySelector(".mobile-nav").classList.toggle("active");
-        }
-    </script>
+    <button class="login-btn">Войти</button>
 
 
-    <script>
-        function toggleMenu() {
-            document.querySelector(".mobile-nav").classList.toggle("active");
-        }
-    </script>
-    </header>
-
-
-    <section id="contact">
-        <div class="container">
-            <div class="contact-form">
-                <h2>Напишите нам</h2>
-                <p>И наши менеджеры свяжутся с вами в кратчайшие сроки.</p>
-
-                <form>
-                    <input type="text" placeholder="Имя*" required>
-                    <input type="tel" placeholder="Телефон*" required>
-                    <textarea placeholder="Сообщение*" required></textarea>
-                    <div class="checkbox-container">
-
-                        <div>
-                            <input type="checkbox" id="consent" required>
-                        </div>
-                        <div class="aboba">
-                            Согласен на обработку персональных данных (<a href="#">пользовательское соглашение</a>)
-                        </div>
-                    </div>
-                    <button type="submit">Отправить</button>
-                </form>
-
-            </div>
-            <div class="contact-info">
-                <h2>Наши контакты</h2>
-                <ul>
-                    <li><i class="fas fa-phone"></i> Тел.: +375(29)138-05-00 A1</li>
-                    <li><i class="fas fa-phone"></i> +375(29)846-05-00 МТС</li>
-                    <li><i class="fas fa-phone"></i> +375(25)946-05-00 Лайф</li>
-                    <li><i class="fas fa-envelope"></i> Email: dolano@yandex.by</li>
-                </ul>
-                <h2>Время работы</h2>
-                <p><i class="fa fa-calendar" aria-hidden="true"></i> Пн - Пт: 10.00 - 19.00</p>
-                <p><i class="fa fa-calendar" aria-hidden="true"></i> Сб - Вс: Выходной</p>
-                <h2>Наш офис</h2>
-                <p><i class="fa fa-globe" aria-hidden="true"></i> г. Минск, пр-т Дзержинского З, офис 12А, 5 этаж</p>
-            </div>
-        </div>
-        <div id="map" style="width: 100%; height: 500px"></div>
+    <nav class="mobile-nav">
+      <a href="index.html">Главная</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Контакты</a>
+      <a href="about.html">О нас</a>
+      <a href="reservation.html">Бронирование</a>
+    </nav>
+  </header>
 
   <script>
-    ymaps.ready(() => {
-      const map = new ymaps.Map('map', {
-        center: [53.902284, 27.561831],
-        zoom: 13,
-      });
+    function toggleMenu() {
+      document.querySelector(".mobile-nav").classList.toggle("active");
+    }
+  </script>
 
-      const markers = [
-        {
-          coordinates: [53.861062, 27.479419],
-          info: {
-            title: "Офис в ТЦ Титан",
-            description: "Главный офис Dolano. Офис находится на 5 этаже ТЦ Титан."
-          }
-        },
-        {
-          coordinates: [52.416811, 30.961696],
-          info: {
-            title: "Филиал Dolano в Гомеле",
-            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
-          }
-        },
-        {
-          coordinates: [55.194386, 30.192680],
-          info: {
-            title: "Филиал Dolano в Витебске",
-            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
-          }
-        }
-        ,
-        {
-          coordinates: [52.097153, 23.685785],
-          info: {
-            title: "Филиал Dolano в Бресте",
-            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
-          }
-        },
-        {
-          coordinates: [53.677442, 23.828648],
-          info: {
-            title: "Филиал Dolano в Гродно",
-            description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
-          }
-        },
-        {
-          coordinates: [53.897648, 27.560388],
-          info: {
-            title: "Офис обслуживания клиентов",
-            description: "Здесь вы можете забронировать тур, оплатить путешествие или получить поддержку по текущим заказам."
-          }
-        }
-      ];
 
-      markers.forEach(markerData => {
-        const placemark = new ymaps.Placemark(
-          markerData.coordinates,
-          { balloonContentBody: getBalloonContent(markerData.info) }, // Внутренний контент
+  <script>
+    function toggleMenu() {
+      document.querySelector(".mobile-nav").classList.toggle("active");
+    }
+  </script>
+  </header>
+
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-form">
+        <h2>Напишите нам</h2>
+        <p>И наши менеджеры свяжутся с вами в кратчайшие сроки.</p>
+
+        <form>
+          <input type="text" placeholder="Имя*" required maxlength="20" pattern="[A-Za-zА-Яа-яЁё\s]{1,20}"
+            title="Имя должно содержать только буквы и пробелы, максимум 20 символов">
+          <input type="tel" placeholder="Телефон*" required pattern="\d{12}",required maxlength="12" title="Введите ровно 12 цифр">
+          <textarea placeholder="Сообщение*" required maxlength="200"></textarea>
+          <div class="checkbox-container">
+
+            <div>
+              <input type="checkbox" id="consent" required>
+            </div>
+            <div class="aboba">
+              Согласен на обработку персональных данных (<a href="#">пользовательское соглашение</a>)
+            </div>
+          </div>
+          <button type="submit">Отправить</button>
+        </form>
+
+      </div>
+      <div class="contact-info">
+        <h2>Наши контакты</h2>
+        <ul>
+          <li><i class="fas fa-phone"></i> Тел.: +375(29)138-05-00 A1</li>
+          <li><i class="fas fa-phone"></i> +375(29)846-05-00 МТС</li>
+          <li><i class="fas fa-phone"></i> +375(25)946-05-00 Лайф</li>
+          <li><i class="fas fa-envelope"></i> Email: dolano@yandex.by</li>
+        </ul>
+        <h2>Время работы</h2>
+        <p><i class="fa fa-calendar" aria-hidden="true"></i> Пн - Пт: 10.00 - 19.00</p>
+        <p><i class="fa fa-calendar" aria-hidden="true"></i> Сб - Вс: Выходной</p>
+        <h2>Наш офис</h2>
+        <p><i class="fa fa-globe" aria-hidden="true"></i> г. Минск, пр-т Дзержинского З, офис 12А, 5 этаж</p>
+      </div>
+    </div>
+    <div id="map" style="width: 100%; height: 500px"></div>
+
+    <script>
+      ymaps.ready(() => {
+        const map = new ymaps.Map('map', {
+          center: [53.902284, 27.561831],
+          zoom: 13,
+        });
+
+        const markers = [
           {
-            iconLayout: 'default#image',
-            iconImageHref: 'https://cdn-icons-png.flaticon.com/128/3699/3699561.png', // Ваша иконка
-            iconImageSize: [32, 32],
-            iconImageOffset: [-16, -32],
-            balloonPanelMaxMapArea: 0 // Включаем всплывающее окно
+            coordinates: [53.861062, 27.479419],
+            info: {
+              title: "Офис в ТЦ Титан",
+              description: "Главный офис Dolano. Офис находится на 5 этаже ТЦ Титан."
+            }
+          },
+          {
+            coordinates: [52.416811, 30.961696],
+            info: {
+              title: "Филиал Dolano в Гомеле",
+              description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+            }
+          },
+          {
+            coordinates: [55.194386, 30.192680],
+            info: {
+              title: "Филиал Dolano в Витебске",
+              description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+            }
           }
-        );
+          ,
+          {
+            coordinates: [52.097153, 23.685785],
+            info: {
+              title: "Филиал Dolano в Бресте",
+              description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+            }
+          },
+          {
+            coordinates: [53.677442, 23.828648],
+            info: {
+              title: "Филиал Dolano в Гродно",
+              description: "В этом филиале вы сможете узнать подробнее про туры, изучить популярные места и зарезервировать тур"
+            }
+          },
+          {
+            coordinates: [53.897648, 27.560388],
+            info: {
+              title: "Офис обслуживания клиентов",
+              description: "Здесь вы можете забронировать тур, оплатить путешествие или получить поддержку по текущим заказам."
+            }
+          }
+        ];
 
-        placemark.events.add('mouseenter', () => {
-          placemark.balloon.open();
+        markers.forEach(markerData => {
+          const placemark = new ymaps.Placemark(
+            markerData.coordinates,
+            { balloonContentBody: getBalloonContent(markerData.info) },
+            {
+              iconLayout: 'default#image',
+              iconImageHref: 'https://cdn-icons-png.flaticon.com/128/3699/3699561.png',
+              iconImageSize: [32, 32],
+              iconImageOffset: [-16, -32],
+              balloonPanelMaxMapArea: 0
+            }
+          );
+
+          placemark.events.add('mouseenter', () => {
+            placemark.balloon.open();
+          });
+
+
+          placemark.events.add('mouseleave', () => {
+            placemark.balloon.close();
+          });
+
+          map.geoObjects.add(placemark);
         });
 
-        // Закрываем балун при уходе курсора
-        placemark.events.add('mouseleave', () => {
-          placemark.balloon.close();
-        });
 
-        map.geoObjects.add(placemark);
-      });
-
-      // Функция для генерации контента балуна
-      function getBalloonContent(info) {
-        return `
+        function getBalloonContent(info) {
+          return `
           <div class="custom-balloon">
             <h3>${info.title}</h3>
             <p>${info.description}</p>
           </div>
         `;
-      }
-    });
-  </script>
-    </section>
+        }
+      });
+    </script>
+  </section>
 
 
 
 
-    <footer style="background: #fff; padding: 40px 20px; border-top: 1px solid #eee;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div
-                style="display: grid;   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 30px; padding-bottom: 40px; border-bottom: 1px solid #ddd;">
+  <footer style="background: #fff; padding: 40px 20px; border-top: 1px solid #eee;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div
+        style="display: grid;   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 30px; padding-bottom: 40px; border-bottom: 1px solid #ddd;">
 
-                <div>
-                    <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Места назначения</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Индонезия</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Малайзия</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Япония</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Мальдивы</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Швеция</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Компания</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">О нас</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Пресса</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Контакты</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Партнеры</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Статус</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Политика</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика
-                                приватности</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Условия
-                                использования</a></li>
-                        <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика Cookie</a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Следите за нами</h4>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="https://www.facebook.com" target="_blank">
-                            <img src="assets/images/facebook-icon.png" alt="Facebook" style="width: 24px;">
-                        </a>
-                        <a href="https://www.twitter.com" target="_blank">
-                            <img src="assets/images/twitter-icon.png" alt="Twitter" style="width: 24px;">
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank">
-                            <img src="assets/images/instagram-icon.png" alt="Instagram" style="width: 24px;">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div style="text-align: center; padding: 30px 0 20px;">
-                <div style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                    <img src="assets/images/logo.png" alt="Company Logo" style="height: 40px;">
-                    <h1 style="font-size: 24px; margin: 0;">Dolano</h1>
-                </div>
-                <div style="color: #666; font-size: 14px;">
-                    © 2024 Dolano Inc. Все права защищены.
-                </div>
-            </div>
-
-
-            <div
-                style="display: flex; justify-content: center; gap: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
-                <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика приватности</a>
-                <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Условия использования</a>
-                <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика Cookie</a>
-            </div>
+        <div>
+          <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Места назначения</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Индонезия</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Малайзия</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Япония</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Мальдивы</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Швеция</a></li>
+          </ul>
         </div>
-    </footer>
+
+        <div>
+          <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Компания</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">О нас</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Пресса</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Контакты</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Партнеры</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Статус</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Политика</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px;">
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика
+                приватности</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Условия
+                использования</a></li>
+            <li><a href="#" style="text-decoration: none; color: #666; font-size: 14px;">Политика Cookie</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #004e64; margin: 0 0 15px; font-size: 16px;">Следите за нами</h4>
+          <div style="display: flex; gap: 15px;">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="assets/images/facebook-icon.png" alt="Facebook" style="width: 24px;">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <img src="assets/images/twitter-icon.png" alt="Twitter" style="width: 24px;">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="assets/images/instagram-icon.png" alt="Instagram" style="width: 24px;">
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div style="text-align: center; padding: 30px 0 20px;">
+        <div style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+          <img src="assets/images/logo.png" alt="Company Logo" style="height: 40px;">
+          <h1 style="font-size: 24px; margin: 0;">Dolano</h1>
+        </div>
+        <div style="color: #666; font-size: 14px;">
+          © 2024 Dolano Inc. Все права защищены.
+        </div>
+      </div>
+
+
+      <div style="display: flex; justify-content: center; gap: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+        <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика приватности</a>
+        <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Условия использования</a>
+        <a href="#" style="color: #666; text-decoration: none; font-size: 14px;">Политика Cookie</a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 
